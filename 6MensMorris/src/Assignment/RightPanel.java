@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 public class RightPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private static int Red = 6;
+	private static int Red = 0;
 	private static JLabel RR;
 	private GridBagConstraints c1 = new GridBagConstraints();
 	private GridBagConstraints c2 = new GridBagConstraints();
@@ -61,17 +61,26 @@ public class RightPanel extends JPanel {
 
 	}
 	/**
+	 * incrementcounter
+	 */
+	public static void incrementcounter() {										// whenever a red piece is dropped onto the board, remaining + 1
+		RR.setText("remaining " + ++Red);
+	}
+	
+	/**
 	 * decrementcounter
 	 */
-	public static void decrementcounter() {										// whenever a red piece is dropped onto the board, remains - 1
-		RR.setText("remains " + --Red);
+	public static void decrementcounter() {										// whenever a blue piece is removed from the board, remains - 1
+		RR.setText("remaining: " + --Red);
 	}
+	
+	
 	/**
 	 * resetcounter
 	 */
 	public static void resetcounter() {											// reset the counter
-		Red = 6;
-		RR.setText("remains " + Red);
+		Red = 0;
+		RR.setText("remaining " + Red);
 	}
 	/**
 	 * warning

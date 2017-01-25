@@ -1,6 +1,8 @@
 package Assignment;
 
 import java.awt.BorderLayout;
+import java.io.IOException;
+
 import javax.swing.*;
 
 public class SixMensMorris extends JFrame {
@@ -27,11 +29,12 @@ public class SixMensMorris extends JFrame {
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
 	}
 
 	public static void main(String args[]) { 							// In main, we call the method in order to create the game
 		SixMensMorris game = new SixMensMorris();
-
+		
 	}
 
 }

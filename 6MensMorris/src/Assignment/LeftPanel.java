@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 public class LeftPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private static int Blue = 6;
+	private static int Blue = 0;
 	private static JLabel BR;
 	private GridBagConstraints c1 = new GridBagConstraints();
 	private GridBagConstraints c2 = new GridBagConstraints();
@@ -29,7 +29,7 @@ public class LeftPanel extends JPanel {
 	public LeftPanel() {
 		ImageIcon BlueP = createImageIcon("/Blue-circle-90.png");				// import the image for blue piece
 
-		Insets inset = new Insets(10, 10, 10, 10);								// set insets
+		Insets inset = new Insets(5, 5, 5, 5);								// set insets
 		setLayout(new GridBagLayout());											// set layout
 		setSize(200, 200);														// set size
 		setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));				// set border
@@ -67,17 +67,25 @@ public class LeftPanel extends JPanel {
 
 	}
 	/**
+	 * incrementcounter
+	 */
+	public static void incrementcounter() {										// whenever a blue piece is dropped onto the board, remaining + 1
+		BR.setText("remaining: " + ++Blue);
+	}
+	/**
 	 * decrementcounter
 	 */
-	public static void decrementcounter() {										// whenever a blue piece is dropped onto the board, remains - 1
-		BR.setText("remains " + --Blue);
+	public static void decrementcounter() {										// whenever a blue piece is removed from the board, remaining - 1
+		BR.setText("remaining: " + --Blue);
 	}
+	
+	
 	/**
 	 * resetcounter
 	 */
 	public static void resetcounter() {											// reset the counter
-		Blue = 6;
-		BR.setText("remains " + Blue);
+		Blue = 0;
+		BR.setText("remaining " + Blue);
 	}
 	/**
 	 * warning
